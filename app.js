@@ -7,9 +7,10 @@ const shopsRoutes = require("./routes/shops");
 const ordersRoutes = require("./routes/orders");
 
 const app = express();
+const url = process.env.MONGODB_URL;
 
 mongoose.set("strictQuery", false);
-mongoose.connect("mongodb+srv://ts21ann:" + process.env.MONGO_ATLAS_PW + "@skillhub.qr25lpk.mongodb.net/delivery-app")
+mongoose.connect(url)
 .then(() => {
     console.log("Connected database!");
 })
